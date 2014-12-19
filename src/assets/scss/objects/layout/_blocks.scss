@@ -1,0 +1,57 @@
+/* ---------------------------------------------------------------------
+ Blocks
+------------------------------------------------------------------------ */
+
+$blocks-GUTTER_X: rem(20);
+$blocks-GUTTER_Y: rem(20);
+$blocks-UP: 2, 3, 4, 6;
+
+.blocks {
+    margin-left: -#{$blocks-GUTTER_X};
+    font-size: 0;
+}
+
+.blocks > * {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: $blocks-GUTTER_X;
+    vertical-align: top;
+    font-size: $FONT_SIZE_DEFAULT;
+}
+
+.blocks > * {
+    padding-bottom: $blocks-GUTTER_Y;
+}
+
+// loop through each value in $blocks-UP
+@each $blocks-count in $blocks-UP {
+
+    .blocks_#{$blocks-count}up > * {
+        width: 100% / $blocks-count;
+    }
+
+    @include bpMin($SM) {
+        .bpMinSM-blocks_#{$blocks-count}up > * {
+            width: 100% / $blocks-count;
+        }
+    }
+
+    @include bpMin($MD) {
+        .bpMinMD-blocks_#{$blocks-count}up > * {
+            width: 100% / $blocks-count;
+        }
+    }
+
+    @include bpMin($LG) {
+        .bpMinLG-blocks_#{$blocks-count}up > * {
+            width: 100% / $blocks-count;
+        }
+    }
+
+}
+
+// mixins
+.mix-blocks_median > * {
+    vertical-align: middle;
+}

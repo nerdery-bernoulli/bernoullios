@@ -1,0 +1,32 @@
+// ---------------------------------------------------------------------
+// Mixins
+//
+// Dependencies: _views, _functions, _vars
+// ---------------------------------------------------------------------
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin isVisuallyHidden() {
+    overflow: hidden !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    border: 0 !important;
+    padding: 0 !important;
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px) !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+}
+
+@mixin isHidden() {
+    display: none !important;
+}

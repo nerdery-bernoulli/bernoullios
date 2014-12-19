@@ -1,0 +1,24 @@
+// Helpers
+@import 'helpers/_views.scss';
+@import 'helpers/_functions.scss';
+@import 'helpers/_vars';
+@import 'helpers/_mixins';
+
+// Base
+@import 'base/_fonts';
+@import 'base/_reset';
+@import 'base/_elements';
+@import 'base/_utils';
+
+/* ---------------------------------------------------------------------
+ Objects
+------------------------------------------------------------------------ */
+
+// Global - persistent, site-wide objects such as header, footer, etc...
+
+// Layout - objects strictly used for positioning
+@import 'objects/layout/_blocks.scss';
+
+// Modules - not simple content or pure layout. these objects are often styled containers
+
+// Content - smallest entities such as text styles, icons, buttons, etc...

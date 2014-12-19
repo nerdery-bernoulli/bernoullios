@@ -1,0 +1,13 @@
+{
+  "generator-nerdery": {
+    "title": "bernoullios",
+    "name": "bernoullios",
+    "description": "Front end architecture built on mixin based media query delivery",
+    "version": "1.0.0",
+    "markup": "MarkupHandlebars",
+    "styles": "StylesSass",
+    "scripts": "ScriptsRequireJs",
+    "framework": "FrameworkVanilla",
+    "scriptsVanillaNamespace": "NRD"
+  }
+}

@@ -1,0 +1,20 @@
+/* ---------------------------------------------------------------------
+ Elements
+------------------------------------------------------------------------ */
+
+html {
+    font-size: 1em;
+}
+
+body {
+    font: normal #{$FONT_SIZE_DEFAULT}/1.2 $FONT_FAMILY_DEFAULT;
+}
+
+img {
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}

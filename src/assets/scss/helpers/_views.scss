@@ -1,0 +1,55 @@
+// ---------------------------------------------------------------------
+// View mixins
+//
+// Mixins for handling media queries, modern and legacy output, print styles, etc...
+//
+// Dependencies: none
+// ---------------------------------------------------------------------
+
+@if variable-exists(isModern) == false {
+    $isModern: true;
+}
+
+// ---------------------------------------------------------------------
+// Media queries
+// ---------------------------------------------------------------------
+
+// bpMin mixins cascade up
+//
+// <--(all)--------------------->
+//           |--(SM)------------>
+//                     |--(MD)-->
+@mixin bpMin($min) {
+    @if $isModern {
+        @media (min-width: $min / 16 + em) { @content; }
+    } @else {
+        @content;
+    }
+}
+
+// bpMax mixins cascade down
+// 0.66 pads the value so that browser text overrides wont cause value to round incorrectly
+//
+// <---(SM)--|
+// <-------------(MD)--|
+// <--(all)--------------------->
+@mixin bpMax($max) {
+    @if $isModern {
+        @media (max-width: ($max - 0.66) / 16 + em) { @content; }
+    }
+}
+
+// bpRange mixins are scoped to a limited range.
+// second param is treated as a less-than.
+// if you wanted to cover a range of 480 and greater,
+// but less than 800, you would do bpRange(480, 800).
+//
+// never use bpRange for anything that could be handled with bpMin or bpMax
+//
+//           | (SM MD) |
+// <--(all)--------------------->
+@mixin bpRange($min, $max) {
+    @if $isModern {
+        @media (min-width: $min / 16 + em) and (max-width: ($max - 0.66) / 16 + em) { @content; }
+    }
+}
